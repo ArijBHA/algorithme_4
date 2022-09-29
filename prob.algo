@@ -1,0 +1,19 @@
+ALGORITHM card_game
+VAR
+    tab : ARRAY_OF INTEGER[100];
+    x : INTEGER;
+    i , j , result : INTEGER;
+BEGIN
+    x := tab.length
+    FOR i FROM 1 TO x-1 STEP 1  DO
+         result := tab[i];
+        FOR j FROM i-1 TO 0 STEP -1  DO
+            IF ( result > tab[j]) THEN
+                BREAK;
+            ELSE
+               tab[j+1]  := tab[j];
+            END_IF 
+        END_FOR
+        tab[j+1] :=  result;
+    END_FOR
+END
